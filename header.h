@@ -5,17 +5,19 @@ struct History{
 };
 typedef struct Hystory HISTORY;
 struct Card{
-	double card_number;
-	int pin[4];
-	char expiry[5];
-	char cvv[3];
+	long int card_number;
+	char *pin;
+	char *expiry;
+	char *cvv;
 	int balance;
-	int status;
+	char status[6];
 	struct Card *next;
 };
 typedef struct Card LSC;
 struct poz{
 	int nr;
+	LSC *card_curent;
+	HISTORY *history_card_curent;
 	struct poz *next;
 };
 typedef struct poz POZ;
